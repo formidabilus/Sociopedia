@@ -187,7 +187,7 @@ const Form = () => {
                       setFieldValue("picture", acceptedFiles[0])
                     }
                   >
-                    {(getRootProps, getInputProps) => (
+                    {({ getRootProps, getInputProps }) => (
                       <Box
                         {...getRootProps()}
                         border={`2px dashed ${palette.primary.main}`}
