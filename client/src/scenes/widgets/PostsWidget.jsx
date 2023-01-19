@@ -29,30 +29,30 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     dispatch(setPosts({ posts: data }));
   };
 
-  useEffect(()=>{
-    if(isProfile) {
-        getUserPosts()
+  useEffect(() => {
+    if (isProfile) {
+      getUserPosts();
     } else {
-        getPosts()
+      getPosts();
     }
-  }, [])
+  }, []);
 
   return (
     <>
-    {posts.map(
+      {posts.map(
         ({
-            _id,
-            userId,
-            firstName,
-            lastName,
-            description,
-            location,
-            picturePath,
-            userPicturePath,
-            likes,
-            comments
+          _id,
+          userId,
+          firstName,
+          lastName,
+          description,
+          location,
+          picturePath,
+          userPicturePath,
+          likes,
+          comments,
         }) => (
-            <PostWidget 
+          <PostWidget
             key={_id}
             postId={_id}
             postUserId={userId}
@@ -63,10 +63,11 @@ const PostsWidget = ({ userId, isProfile = false }) => {
             userPicturePath={userPicturePath}
             likes={likes}
             comments={comments}
+          />
         )
-    )}
+      )}
     </>
-  )
+  );
 };
 
 export default PostsWidget;
