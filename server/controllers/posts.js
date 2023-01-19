@@ -7,7 +7,7 @@ export const createPost = async (req, res) => {
     const { userId, description, picturePath } = req.body;
     const user = await User.findById(userId);
     const newPost = new Post({
-      userid,
+      userId,
       firstName: user.firstName,
       lastName: user.lastName,
       location: user.location,
