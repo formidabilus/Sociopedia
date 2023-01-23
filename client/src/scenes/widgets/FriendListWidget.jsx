@@ -7,7 +7,7 @@ import { setFriends } from "state/state";
 
 const FriendListWidget = ({ userId }) => {
   const dispatch = useDispatch();
-  const { palette } = useTheme;
+  const { palette } = useTheme();
   const token = useSelector((state) => state.token);
   const friends = useSelector((state) => state.user.friends);
 
@@ -44,7 +44,7 @@ const FriendListWidget = ({ userId }) => {
           <Friend
             key={friend._id}
             friendId={friend._id}
-            name={`${friend.firsName} ${friend.lastName}`}
+            name={`${friend.firstName} ${friend.lastName}`}
             subtitle={friend.occupation}
             userPicturePath={friend.picturePath}
           />
