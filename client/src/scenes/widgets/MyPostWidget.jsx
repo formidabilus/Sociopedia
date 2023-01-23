@@ -60,9 +60,6 @@ const MyPostWidget = ({ picturePath, userId }) => {
     setPost("");
   };
 
-  console.log("id: " + _id, typeof _id);
-  console.log("userId: " + userId, typeof userId);
-
   return (
     <WidgetWrapper>
       <FlexBetween gap="1.5rem">
