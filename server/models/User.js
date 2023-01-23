@@ -1,4 +1,4 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema(
   {
@@ -31,7 +31,7 @@ const UserSchema = new mongoose.Schema(
     },
     friends: {
       type: Array,
-      default: "",
+      default: [],
     },
     location: String,
     occupation: String,
