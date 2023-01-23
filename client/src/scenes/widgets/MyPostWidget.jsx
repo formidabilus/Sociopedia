@@ -28,7 +28,7 @@ import UserImage from "components/UserImage";
 import WidgetWrapper from "components/WidgetWrapper";
 import FlexBetween from "components/FlexBetween";
 
-const MyPostWidget = ({ picturePath }) => {
+const MyPostWidget = ({ picturePath, userId }) => {
   const dispatch = useDispatch();
   const [isImage, setIsImage] = useState(false);
   const [image, setImage] = useState(null);
@@ -55,10 +55,13 @@ const MyPostWidget = ({ picturePath }) => {
       body: formData,
     });
     const posts = await response.json();
-    dispatch(setPosts({ post }));
+    dispatch(setPosts({ posts: posts.reverse() }));
     setImage(null);
     setPost("");
   };
+
+  console.log("id: " + _id, typeof _id);
+  console.log("userId: " + userId, typeof userId);
 
   return (
     <WidgetWrapper>
@@ -160,7 +163,9 @@ const MyPostWidget = ({ picturePath }) => {
         )}
 
         <Button
-          disabled={!post}
+          disabled={
+            !((post && _id === userId) || (post && userId === undefined))
+          }
           onClick={handlePost}
           sx={{
             color: palette.background.alt,

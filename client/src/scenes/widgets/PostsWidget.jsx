@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state/state";
 import PostWidget from "./PostWidget";
@@ -37,6 +37,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     }
   }, []);
 
+  console.log(posts);
   return (
     <>
       {posts.map(
