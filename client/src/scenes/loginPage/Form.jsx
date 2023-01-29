@@ -55,8 +55,6 @@ const Form = () => {
   const isLogin = pageType === "login";
   const isRegister = pageType === "register";
 
-  const baseUrl = process.env.REACT_APP_BASE_URL;
-
   const register = async (values, onSubmitProps) => {
     // this allows to send form info with image
     const formData = new FormData();
@@ -79,7 +77,6 @@ const Form = () => {
       setPageType("login");
     }
   };
-  console.log("baseUrl: " + baseUrl);
 
   const login = async (values, onSubmitProps) => {
     const loggedInResponse = await fetch(
