@@ -5,6 +5,7 @@ const initialState = {
   user: null,
   token: null,
   posts: [],
+  searchedPostsResult: [],
 };
 
 export const authSlice = createSlice({
@@ -39,9 +40,27 @@ export const authSlice = createSlice({
       });
       state.posts = updatedPosts;
     },
+    setSearchedPostsResult: (state, action) => {
+      state.searchedPostsResult = action.payload.searchedPostsResult;
+    },
+    setSearchedPost: (state, action) => {
+      const updatedSearchedPosts = state.searchedPostsResult.map((post) => {
+        if (post._id === action.payload.post._id) return action.payload.post;
+        return post;
+      });
+      state.searchedPostsResult = updatedSearchedPosts;
+    },
   },
 });
 
-export const { setMode, setLogin, setLogout, setFriends, setPosts, setPost } =
-  authSlice.actions;
+export const {
+  setMode,
+  setLogin,
+  setLogout,
+  setFriends,
+  setPosts,
+  setPost,
+  setSearchedPostsResult,
+  setSearchedPost,
+} = authSlice.actions;
 export default authSlice.reducer;

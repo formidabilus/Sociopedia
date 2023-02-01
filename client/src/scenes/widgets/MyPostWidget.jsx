@@ -22,7 +22,7 @@ import Dropzone from "react-dropzone";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { setPosts } from "state/state";
+import { setPosts, setSearchedPostsResult } from "state/state";
 
 import UserImage from "components/UserImage";
 import WidgetWrapper from "components/WidgetWrapper";
@@ -56,6 +56,7 @@ const MyPostWidget = ({ picturePath, userId }) => {
     });
     const posts = await response.json();
     dispatch(setPosts({ posts: posts.reverse() }));
+    dispatch(setSearchedPostsResult({ searchedPostsResult: posts }));
     setImage(null);
     setPost("");
   };

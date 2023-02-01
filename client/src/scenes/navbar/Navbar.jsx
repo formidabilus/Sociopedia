@@ -21,15 +21,16 @@ import {
   Close,
 } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
-import { setMode, setLogout } from "state/state";
+import { setMode, setLogout, setSearchedPostsResult } from "state/state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
 
 const Navbar = () => {
+  const posts = useSelector((state) => state.posts);
+  const user = useSelector((state) => state.user);
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user);
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
   const theme = useTheme();
@@ -40,6 +41,21 @@ const Navbar = () => {
   const alt = theme.palette.background.alt;
 
   const fullName = `${user.firstName} ${user.lastName}`;
+
+  const handleSearchChange = (e) => {
+    let searchValue = e.target.value;
+    if (!searchValue)
+      return dispatch(setSearchedPostsResult({ searchedPostsResult: posts }));
+
+    const resultArray = posts.filter(
+      (post) =>
+        post.firstName.toLowerCase().includes(searchValue.toLowerCase()) ||
+        post.lastName.toLowerCase().includes(searchValue.toLowerCase()) ||
+        post.description.toLowerCase().includes(searchValue.toLowerCase()) ||
+        post.location.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    dispatch(setSearchedPostsResult({ searchedPostsResult: resultArray }));
+  };
 
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
@@ -65,7 +81,7 @@ const Navbar = () => {
             gap="3rem"
             padding="0.1rem 1.5rem"
           >
-            <InputBase placeholder="Search..." />
+            <InputBase placeholder="Search..." onChange={handleSearchChange} />
             <IconButton>
               <Search />
             </IconButton>

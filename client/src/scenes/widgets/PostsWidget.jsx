@@ -1,12 +1,12 @@
-import { Fragment, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setPosts } from "state/state";
+import { setPosts, setSearchedPostsResult } from "state/state";
 import PostWidget from "./PostWidget";
 
 const PostsWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
-  const posts = useSelector((state) => state.posts);
   const token = useSelector((state) => state.token);
+  const searchedPostsResult = useSelector((state) => state.searchedPostsResult);
 
   const getPosts = async () => {
     const response = await fetch(`${process.env.REACT_APP_BASE_URL}/posts`, {
@@ -15,6 +15,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     });
     const data = await response.json();
     dispatch(setPosts({ posts: data }));
+    dispatch(setSearchedPostsResult({ searchedPostsResult: data }));
   };
 
   const getUserPosts = async () => {
@@ -27,6 +28,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     );
     const data = await response.json();
     dispatch(setPosts({ posts: data }));
+    dispatch(setSearchedPostsResult({ searchedPostsResult: data }));
   };
 
   useEffect(() => {
@@ -39,7 +41,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 
   return (
     <>
-      {posts.map(
+      {searchedPostsResult.map(
         ({
           _id,
           userId,
