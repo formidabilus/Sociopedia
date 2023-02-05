@@ -34,18 +34,6 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
-app.get("/*", function (req, res) {
-  res.sendFile(
-    path.join(__dirname, "../client/public/index.html"),
-
-    function (err) {
-      if (err) {
-        res.status(500).send(err);
-      }
-    }
-  );
-});
-
 //*  FILE STORAGE
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -66,6 +54,18 @@ app.post("/posts", verifyToken, upload.single("picture"), createPost);
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
+
+app.get("/*", function (req, res) {
+  res.sendFile(
+    path.join(__dirname, "../client/public/index.html"),
+
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    }
+  );
+});
 
 //* MONGOOSE SETUP
 const PORT = process.env.PORT || 6001;
