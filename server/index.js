@@ -57,7 +57,7 @@ app.use("/posts", postRoutes);
 
 app.get("/*", function (req, res) {
   res.sendFile(
-    path.join(__dirname, "../client/public/index.html"),
+    path.join(__dirname, "client/public/index.html"),
 
     function (err) {
       if (err) {
