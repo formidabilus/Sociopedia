@@ -55,18 +55,6 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
-// app.get("/*", function (req, res) {
-//   res.sendFile(
-//     path.join(__dirname, "client/public/index.html"),
-
-//     function (err) {
-//       if (err) {
-//         res.status(500).send(err);
-//       }
-//     }
-//   );
-// });
-
 //* MONGOOSE SETUP
 const PORT = process.env.PORT || 6001;
 console.log(process.env.MONGO_URL);
