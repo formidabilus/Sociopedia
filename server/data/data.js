@@ -14,22 +14,6 @@ const userIds = [
 export const users = [
   {
     _id: userIds[0],
-    firstName: "test",
-    lastName: "me",
-    email: "aaaaaaa@gmail.com",
-    password: "$2b$10$dsasdgsagasda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
-    picturePath: "p11.jpeg",
-    friends: [],
-    location: "San Fran, CA",
-    occupation: "Software Engineer",
-    viewedProfile: 14561,
-    impressions: 888822,
-    createdAt: 1115211422,
-    updatedAt: 1115211422,
-    __v: 0,
-  },
-  {
-    _id: userIds[1],
     firstName: "Steve",
     lastName: "Ralph",
     email: "thataaa@gmail.com",
@@ -45,26 +29,10 @@ export const users = [
     __v: 0,
   },
   {
-    _id: userIds[2],
-    firstName: "Some",
-    lastName: "Guy",
-    email: "someguy@gmail.com",
-    password: "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-    picturePath: "p4.jpeg",
-    friends: [],
-    location: "Canada, CA",
-    occupation: "Data Scientist Hacker",
-    viewedProfile: 45468,
-    impressions: 19986,
-    createdAt: 1288090662,
-    updatedAt: 1288090662,
-    __v: 0,
-  },
-  {
-    _id: userIds[3],
+    _id: userIds[1],
     firstName: "Serena",
     lastName: "Williams",
-    email: "whatchadoing@gmail.com",
+    email: "serenawilliams@gmail.com",
     password: "$2b$10$dsasdgsagasda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
     picturePath: "p6.jpeg",
     friends: [],
@@ -77,7 +45,7 @@ export const users = [
     __v: 0,
   },
   {
-    _id: userIds[4],
+    _id: userIds[2],
     firstName: "Jane",
     lastName: "Doe",
     email: "janedoe@gmail.com",
@@ -93,7 +61,7 @@ export const users = [
     __v: 0,
   },
   {
-    _id: userIds[5],
+    _id: userIds[3],
     firstName: "Harvey",
     lastName: "Dunn",
     email: "harveydunn@gmail.com",
@@ -109,7 +77,7 @@ export const users = [
     __v: 0,
   },
   {
-    _id: userIds[6],
+    _id: userIds[4],
     firstName: "Maria",
     lastName: "Ioana",
     email: "carlyvowel@gmail.com",
@@ -125,10 +93,10 @@ export const users = [
     __v: 0,
   },
   {
-    _id: userIds[7],
+    _id: userIds[5],
     firstName: "Jessica",
-    lastName: "Dunn",
-    email: "jessicadunn@gmail.com",
+    lastName: "Trump",
+    email: "jessicatrump@gmail.com",
     password: "$2b$10$dsasdgsagasda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
     picturePath: "p9.jpeg",
     friends: [],
@@ -145,7 +113,7 @@ export const users = [
 export const posts = [
   {
     _id: new mongoose.Types.ObjectId(),
-    userId: userIds[1],
+    userId: userIds[0],
     firstName: "Steve",
     lastName: "Ralph",
     location: "New York, CA",
@@ -166,7 +134,7 @@ export const posts = [
   },
   {
     _id: new mongoose.Types.ObjectId(),
-    userId: userIds[3],
+    userId: userIds[1],
     firstName: "Serena",
     lastName: "Williams",
     location: "Korea, CA",
@@ -175,7 +143,6 @@ export const posts = [
     picturePath: "post2.jpeg",
     userPicturePath: "p6.jpeg",
     likes: new Map([
-      [userIds[7], true],
       [userIds[4], true],
       [userIds[1], true],
       [userIds[2], true],
@@ -189,7 +156,7 @@ export const posts = [
   },
   {
     _id: new mongoose.Types.ObjectId(),
-    userId: userIds[4],
+    userId: userIds[2],
     firstName: "Jane",
     lastName: "Doe",
     location: "Vaslui, VS",
@@ -213,7 +180,7 @@ export const posts = [
   },
   {
     _id: new mongoose.Types.ObjectId(),
-    userId: userIds[5],
+    userId: userIds[3],
     firstName: "Harvey",
     lastName: "Dunn",
     location: "Los Angeles, CA",
@@ -223,7 +190,6 @@ export const posts = [
     userPicturePath: "p7.jpeg",
     likes: new Map([
       [userIds[1], true],
-      [userIds[6], true],
       [userIds[3], true],
     ]),
     comments: [
@@ -237,19 +203,18 @@ export const posts = [
   },
   {
     _id: new mongoose.Types.ObjectId(),
-    userId: userIds[6],
+    userId: userIds[4],
     firstName: "Maria",
     lastName: "Ioana",
     location: "Chicago, IL",
     description:
       "I love my husband, he's the best next thing I could hoped for.",
-    picturePath: "post5.jpeg",
+    picturePath: "post8.jpeg",
     userPicturePath: "p8.jpeg",
     likes: new Map([
       [userIds[1], true],
       [userIds[3], true],
       [userIds[5], true],
-      [userIds[7], true],
     ]),
     comments: [
       "That's rude, but it's true, so ye..",
@@ -261,9 +226,9 @@ export const posts = [
   },
   {
     _id: new mongoose.Types.ObjectId(),
-    userId: userIds[7],
+    userId: userIds[5],
     firstName: "Jessica",
-    lastName: "Dunn",
+    lastName: "Trump",
     location: "Washington, DC",
     description:
       "I came from USA to Electric Castle to see Florin Salam and the show was just like in the videos from this techonology called internet, verry cool.",
