@@ -62,8 +62,8 @@ export const users = [
   },
   {
     _id: userIds[3],
-    firstName: "Whatcha",
-    lastName: "Doing",
+    firstName: "Serena",
+    lastName: "Williams",
     email: "whatchadoing@gmail.com",
     password: "$2b$10$dsasdgsagasda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
     picturePath: "p6.jpeg",
@@ -84,7 +84,7 @@ export const users = [
     password: "$2b$10$dsasdgsagasda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
     picturePath: "p5.jpeg",
     friends: [],
-    location: "Utah, CA",
+    location: "Vaslui, VS",
     occupation: "Hacker",
     viewedProfile: 40212,
     impressions: 7758,
@@ -110,8 +110,8 @@ export const users = [
   },
   {
     _id: userIds[6],
-    firstName: "Carly",
-    lastName: "Vowel",
+    firstName: "Maria",
+    lastName: "Ioana",
     email: "carlyvowel@gmail.com",
     password: "$2b$10$dsasdgsagasda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
     picturePath: "p8.jpeg",
@@ -133,7 +133,7 @@ export const users = [
     picturePath: "p9.jpeg",
     friends: [],
     location: "Washington, DC",
-    occupation: "A Student",
+    occupation: "Student",
     viewedProfile: 19420,
     impressions: 82970,
     createdAt: 1369908044,
@@ -149,7 +149,7 @@ export const posts = [
     firstName: "Steve",
     lastName: "Ralph",
     location: "New York, CA",
-    description: "Some really long random description",
+    description: "What a wonderful salad",
     picturePath: "post1.jpeg",
     userPicturePath: "p3.jpeg",
     likes: new Map([
@@ -159,19 +159,19 @@ export const posts = [
       [userIds[4], true],
     ]),
     comments: [
-      "random comment",
-      "another random comment",
-      "yet another random comment",
+      "Looks good!",
+      "Yammy!",
+      "Next time I'll go there, I know what I will eat, lol.",
     ],
   },
   {
     _id: new mongoose.Types.ObjectId(),
     userId: userIds[3],
-    firstName: "Whatcha",
-    lastName: "Doing",
+    firstName: "Serena",
+    lastName: "Williams",
     location: "Korea, CA",
     description:
-      "Another really long random description. This one is longer than the previous one.",
+      "I had to try it, I like my eggs like I like my coffee, yellow.",
     picturePath: "post2.jpeg",
     userPicturePath: "p6.jpeg",
     likes: new Map([
@@ -181,10 +181,10 @@ export const posts = [
       [userIds[2], true],
     ]),
     comments: [
-      "one more random comment",
-      "and another random comment",
-      "no more random comments",
-      "I lied, one more random comment",
+      "Be careful with the cholesterol.",
+      "Very nice.",
+      "Bon appetite!",
+      "How many chickens died for this? Is it fair?",
     ],
   },
   {
@@ -192,9 +192,9 @@ export const posts = [
     userId: userIds[4],
     firstName: "Jane",
     lastName: "Doe",
-    location: "Utah, CA",
+    location: "Vaslui, VS",
     description:
-      "This is the last really long random description. This one is longer than the previous one.",
+      "Yey, Electic Castle! I've seen my favorite artist, Florin Salam",
     picturePath: "post3.jpeg",
     userPicturePath: "p5.jpeg",
     likes: new Map([
@@ -204,9 +204,9 @@ export const posts = [
       [userIds[5], true],
     ]),
     comments: [
-      "one more random comment",
-      "I lied, one more random comment",
-      "I lied again, one more random comment",
+      "WOW, I too, like Florin Salam, brrr brrr.",
+      "I'm more of a Romeo Fantastik kind of man.",
+      "Aferhills seems better than Electric Castle, is this true?",
       "Why am I doing this?",
       "I'm bored",
     ],
@@ -218,8 +218,8 @@ export const posts = [
     lastName: "Dunn",
     location: "Los Angeles, CA",
     description:
-      "This is the last really long random description. This one is longer than the previous one. Man I'm bored. I'm going to keep typing until I run out of things to say.",
-    picturePath: "post4.jpeg",
+      "Yes, finally married, not the best thing I could do this year, but it is what it is. I would like to thank God and my parrents first, next I would like to thank to Razvan Chiriac that made it possible by creating this social network where I met my sociopath wife!",
+    picturePath: "post7.jpeg",
     userPicturePath: "p7.jpeg",
     likes: new Map([
       [userIds[1], true],
@@ -227,9 +227,9 @@ export const posts = [
       [userIds[3], true],
     ]),
     comments: [
-      "I lied again, one more random comment",
-      "Why am I doing this?",
-      "I'm bored",
+      "What a beautiful couple.",
+      "Yes, you look so good together.",
+      "No problem, bro, I just did my job.",
       "I'm still bored",
       "All I want to do is play video games",
       "I'm going to play video games",
@@ -238,11 +238,11 @@ export const posts = [
   {
     _id: new mongoose.Types.ObjectId(),
     userId: userIds[6],
-    firstName: "Carly",
-    lastName: "Vowel",
+    firstName: "Maria",
+    lastName: "Ioana",
     location: "Chicago, IL",
     description:
-      "Just a short description. I'm tired of typing. I'm going to play video games now.",
+      "I love my husband, he's the best next thing I could hoped for.",
     picturePath: "post5.jpeg",
     userPicturePath: "p8.jpeg",
     likes: new Map([
@@ -252,11 +252,11 @@ export const posts = [
       [userIds[7], true],
     ]),
     comments: [
-      "I lied again, one more random comment",
-      "Why am I doing this?",
-      "Man I'm bored",
-      "What should I do?",
-      "I'm going to play video games",
+      "That's rude, but it's true, so ye..",
+      "Where will you go to the honeymoon? Prison?",
+      "I bet!",
+      "Like we say here in Belarus, house of stone!",
+      "Have patience, many sandwiches incoming..",
     ],
   },
   {
@@ -266,7 +266,7 @@ export const posts = [
     lastName: "Dunn",
     location: "Washington, DC",
     description:
-      "For the last time, I'm going to play video games now. I'm tired of typing. I'm going to play video games now.",
+      "I came from USA to Electric Castle to see Florin Salam and the show was just like in the videos from this techonology called internet, verry cool.",
     picturePath: "post6.jpeg",
     userPicturePath: "p9.jpeg",
     likes: new Map([
@@ -275,11 +275,11 @@ export const posts = [
     ]),
 
     comments: [
-      "Can I play video games now?",
-      "No let's actually study",
-      "Never mind, I'm going to play video games",
-      "Stop it.",
-      "Michael, stop it.",
+      "Next year, I'll go too, mark my words.",
+      "I think he's coming to Alaska next month!",
+      "Wow, 'got the tickets this instant!",
+      "Can I be your friend?",
+      "Sure thing!",
     ],
   },
 ];
