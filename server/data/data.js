@@ -7,8 +7,6 @@ const userIds = [
   new mongoose.Types.ObjectId(),
   new mongoose.Types.ObjectId(),
   new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
 ];
 
 export const users = [
@@ -166,7 +164,6 @@ export const posts = [
     userPicturePath: "p5.jpeg",
     likes: new Map([
       [userIds[1], true],
-      [userIds[6], true],
       [userIds[3], true],
       [userIds[5], true],
     ]),
