@@ -29,14 +29,9 @@ app.use(express());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
+app.use(cors());
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(
-  cors({
-    origin: `${process.env.REACT_APP_BASE_URL}`,
-    methods: ["GET", "POST", "PATCH"],
-  })
-);
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 //*  FILE STORAGE
