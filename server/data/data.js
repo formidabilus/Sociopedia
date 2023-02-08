@@ -77,8 +77,8 @@ export const users = [
   {
     _id: userIds[4],
     firstName: "Maria",
-    lastName: "Ioana",
-    email: "carlyvowel@gmail.com",
+    lastName: "Chitimus",
+    email: "mariachitimus@gmail.com",
     password: "$2b$10$dsasdgsagasda//G9JxQ4bQ8KXf4OAIe/X/AK9skyWUy",
     picturePath: "p8.jpeg",
     friends: [],
@@ -202,7 +202,7 @@ export const posts = [
     _id: new mongoose.Types.ObjectId(),
     userId: userIds[4],
     firstName: "Maria",
-    lastName: "Ioana",
+    lastName: "Chitimus",
     location: "Chicago, IL",
     description:
       "I love my husband, he's the best next thing I could hoped for.",
