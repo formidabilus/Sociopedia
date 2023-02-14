@@ -228,7 +228,7 @@ export const posts = [
     lastName: "Trump",
     location: "Washington, DC",
     description:
-      "I came from USA to Electric Castle to see Florin Salam and the show was just like in the videos from this techonology called internet, verry cool.",
+      "I came from USA to Electric Castle to see Florin Salam and the show was just like in the videos from this technology called internet, verry cool.",
     picturePath: "post6.jpeg",
     userPicturePath: "p9.jpeg",
     likes: new Map([

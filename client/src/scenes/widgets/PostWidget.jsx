@@ -31,6 +31,9 @@ const PostWidget = ({
   const isLiked = Boolean(likes[loggedInUserId]);
   const likeCount = Object.keys(likes).length;
 
+  const imageBasePath = process.env.REACT_APP_BASE_URL + "/assets/";
+  const postImage = "" + picturePath;
+
   const { palette } = useTheme();
   const main = palette.neutral.main;
   const primary = palette.primary.main;
@@ -70,7 +73,7 @@ const PostWidget = ({
           height="auto"
           alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-          src={`${process.env.REACT_APP_BASE_URL}/assets/${picturePath}`}
+          src={imageBasePath + postImage}
         />
       )}
       <FlexBetween mt="0.25rem">
