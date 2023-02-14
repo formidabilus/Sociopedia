@@ -31,6 +31,7 @@ const PostWidget = ({
   const isLiked = Boolean(likes[loggedInUserId]);
   const likeCount = Object.keys(likes).length;
 
+  // * a hack so that post image will persist after refresh, because src doesn't persist the image if I use template literals `${}`
   const imageBasePath = process.env.REACT_APP_BASE_URL + "/assets/";
   const postImage = "" + picturePath;
 
